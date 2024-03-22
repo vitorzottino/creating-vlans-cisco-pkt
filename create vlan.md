@@ -3,23 +3,23 @@
  
  ## On switch
  ### Creating vlan
-``` 
+```shell
 ena
 conf t
 vlan <index>
-vlan <name>
+name <name>
 ```
 
 ### Adding devices in the vlan
-```
+```shell
 ena 
 conf t
 int "range" <interface>
-switchport acess vlan <index>
+switchport access vlan <index>
 ```
 
 ### Setting a interfaces as trunk
-```
+```shell
 int "range" <interface>
 switchport mode trunk
 switchport trunk allowed vlan <vlan;all>
@@ -27,7 +27,7 @@ switchport trunk allowed vlan <vlan;all>
 
 ## On router
 ### Adding ip address to vlan
-```
+```shell
 ena
 conf t
 int <interface.subinterface>
@@ -36,7 +36,7 @@ ip address <ip-address>
 ```
 
 ### Adding dhcp to vlan
-```
+```shell
 ena
 conf t
 ip dhcp pool <name>
